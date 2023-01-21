@@ -1,3 +1,5 @@
-export interface IFetcher {
+interface IFetcher {
   fetch(): Promise<any>;
 }
+
+export default IFetcher;

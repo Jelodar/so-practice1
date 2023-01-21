@@ -1,4 +1,4 @@
-import { IRepoFilter } from '../models/IRepoFilter';
+import IRepoFilter from '../models/IRepoFilter';
 import { Repo } from '../models/Repo';
 
 class ForkRepoFilter implements IRepoFilter {
