@@ -3,7 +3,7 @@ import cors from 'cors';
 import { repos } from './routes/repos';
 import { terrible } from './middleware/terrible';
 import { AppError } from './models/AppError';
-import {config} from "./config";
+import { config } from './config';
 
 // CORS header configuration
 const corsOptions = {
