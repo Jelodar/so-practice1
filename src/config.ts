@@ -6,6 +6,7 @@ dotenv({ default_node_env: 'development', path: `${__dirname}/../` });
 export const config = {
   server: {
     port: process.env.SERVER_PORT || '4000',
+    corsHost: process.env.CORS_HOST || 'http://localhost:3000',
   },
   api: {
     localRepo:
