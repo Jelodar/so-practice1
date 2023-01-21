@@ -1,13 +1,13 @@
 import IFetcher from '../models/IFetcher';
 import { readFile, watchFile } from 'fs';
+import { config } from '../config';
 
-const REPO_JSON_FILE = '../api/data/repos.json';
 let cache: any = null;
 
 class LocalRepoFetcher implements IFetcher {
   constructor() {
-    watchFile(REPO_JSON_FILE, () => {
-      //clear the cache
+    watchFile(config.api.localRepo, () => {
+      //clear cache
       cache = null;
     });
   }
@@ -17,7 +17,7 @@ class LocalRepoFetcher implements IFetcher {
       return cache;
     }
     return new Promise((resolve, reject) => {
-      readFile(REPO_JSON_FILE, 'utf-8', (err, data) => {
+      readFile(config.api.localRepo, 'utf-8', (err, data) => {
         if (err) {
           reject(err);
         } else {
